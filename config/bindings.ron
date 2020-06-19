@@ -1,0 +1,7 @@
+(
+  axes: {
+    "bike_blue": Emulated(pos: Key(D), neg: Key(A)),
+    "bike_red": Emulated(pos: Key(L), neg: Key(J)),
+  },
+  actions: {},
+)

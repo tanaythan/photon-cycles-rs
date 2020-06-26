@@ -27,7 +27,11 @@ const ARENA_WIDTH: f32 = 800f32;
 const ARENA_HEIGHT: f32 = 600f32;
 const OFFSET_Y: f32 = 50f32;
 
-struct GameState;
+#[derive(Default)]
+struct GameState {
+    blue_score: i32,
+    red_score: i32,
+}
 
 impl SimpleState for GameState {
     fn on_start(&mut self, data: StateData<'_, GameData<'_, '_>>) {
@@ -144,7 +148,7 @@ fn main() -> amethyst::Result<()> {
             &["bike_system", "wall_system"],
         );
 
-    let mut game = Application::new(assets_dir, GameState, game_data)?;
+    let mut game = Application::new(assets_dir, GameState::default(), game_data)?;
     game.run();
 
     Ok(())
